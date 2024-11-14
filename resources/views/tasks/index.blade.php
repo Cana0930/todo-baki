@@ -7,23 +7,28 @@
             <div class="card-header">
                 投稿一覧
             </div>
-            @foreach($posts as $post)
+            {{-- @foreach($tasks as $task) --}}
             <div class="card-body">
-                <h5 class="card-title">タイトル : {{ $post->title }}</h5>
+                <div class="flag"></div>
+                <h5 class="card-title">タイトル : {{ 'からあげ' }}</h5>
                 <p class="card-text">
-                  内容 : {{ $post->body }}
+                  内容 : {{ 'うなぎ' }}
                 </p>
-                <p class="card-text">投稿者：{{ $post->user->name }}</p>
-                <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細へ</a>
+                <p class="card-text">
+                  投稿者：
+                  {{-- 投稿者：{{ $task->user->name }} --}}
+                </p>
+                {{-- <a href="{{ route('posts.show', $task->id) }}" class="btn btn-primary">詳細へ</a> --}}
             </div>
             <div class="card-footer text-muted">
-                投稿日時 : {{ $post->created_at }}
+              投稿日時：
+                {{-- 投稿日時 : {{ $task->created_at }} --}}
             </div>
-            @endforeach
+            {{-- @endforeach --}}
         </div>
         </div>
         <div class="col-md-2">
-          <a href="{{ route('posts.create') }}" class="btn btn-primary">
+          {{-- <a href="{{ route('tasks.create') }}" class="btn btn-primary"> --}}
             新規投稿
           </a>
         </div>
