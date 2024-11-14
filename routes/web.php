@@ -24,7 +24,7 @@ Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
 
 Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
 
-// Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
 
 // Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 
