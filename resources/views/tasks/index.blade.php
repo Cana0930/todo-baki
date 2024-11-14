@@ -86,10 +86,10 @@
             {{-- </div>
             <div class="card-footer text-muted"> --}}
                 {{-- 投稿日時 : {{ $post->created_at }} --}}
-            </div>
+            {{-- </div>
             @endforeach
         </div>
-        <div class="col-md-2"> --}}
+        <div class="col-md-2"> --
           <a href="{{ route('tasks.create') }}" class="btn btn-primary">
             新規投稿
           </a>

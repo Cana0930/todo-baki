@@ -21,6 +21,7 @@ class TaskController extends Controller
 
     function store(Request $request)
     {
+        // dd($request);
         $task = new Task;
         $task -> title = $request -> title;
         $task -> contents = $request -> contents;
