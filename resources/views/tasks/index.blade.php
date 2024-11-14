@@ -11,7 +11,7 @@
             <div class="card-body">
 
                 <div class="color"></div>
-                <h5 class="card-title">タイトル : {{ $task->title }}</h5>
+                <h5 class="card-title">タイトル2 : {{ $task->title }}</h5>
                 <p class="card-text">
                   内容 : {{ $task->body }}
                 </p>
