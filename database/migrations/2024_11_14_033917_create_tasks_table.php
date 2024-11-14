@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('contents');
             $table->text('image_at');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained('users');
             $table->date('finish_date');
+            $table->foreignId('color_id')->constrained('colors');
             $table->boolean('confirmed');
             $table->timestamps();
         });
