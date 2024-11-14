@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +12,6 @@ use App\Http\Controllers\TaskController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,4 +21,20 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
+
+Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
+
+// Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+// Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+
+// Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
+// Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+
+// Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+// Route::get('/comments/create/{post_id}', [CommentController::class, 'create'])->name('comments.create');
+
+// Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 

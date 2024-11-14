@@ -9,26 +9,25 @@
             </div>
             {{-- @foreach($tasks as $task) --}}
             <div class="card-body">
-                <div class="flag"></div>
+
+                <div class="color"></div>
                 <h5 class="card-title">タイトル : {{ 'からあげ' }}</h5>
                 <p class="card-text">
-                  内容 : {{ 'うなぎ' }}
+                  内容 : {{ 'うなぎたかい' }}
                 </p>
-                <p class="card-text">
-                  投稿者：
-                  {{-- 投稿者：{{ $task->user->name }} --}}
-                </p>
-                {{-- <a href="{{ route('posts.show', $task->id) }}" class="btn btn-primary">詳細へ</a> --}}
+                <p class="card-text">投稿者：{{ 'かえる' }}</p>
+                {{-- <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">詳細へ</a> --}}
             </div>
             <div class="card-footer text-muted">
-              投稿日時：
-                {{-- 投稿日時 : {{ $task->created_at }} --}}
+                {{-- 投稿日時 : {{ $post->created_at }} --}}
             </div>
             {{-- @endforeach --}}
         </div>
         </div>
         <div class="col-md-2">
+
           {{-- <a href="{{ route('tasks.create') }}" class="btn btn-primary"> --}}
+
             新規投稿
           </a>
         </div>
