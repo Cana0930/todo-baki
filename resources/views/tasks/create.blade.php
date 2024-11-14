@@ -4,8 +4,7 @@
  <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            正露丸は敵
-            {{-- <form action="{{ route('posts.store') }}" method="POST">
+            <form action="{{ route('posts.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label>タイトル</label>
@@ -17,7 +16,7 @@
                     </textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">作成</button>
-            </form> --}}
+            </form>
         </div>
     </div>
   </div>
