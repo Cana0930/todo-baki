@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +12,6 @@ use App\Http\Controllers\TaskController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -39,3 +37,4 @@ Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.crea
 // Route::get('/comments/create/{post_id}', [CommentController::class, 'create'])->name('comments.create');
 
 // Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+

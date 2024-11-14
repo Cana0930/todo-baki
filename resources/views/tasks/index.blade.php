@@ -9,6 +9,7 @@
             </div>
             {{-- @foreach($tasks as $task) --}}
             <div class="card-body">
+
                 <div class="color"></div>
                 <h5 class="card-title">タイトル : {{ 'からあげ' }}</h5>
                 <p class="card-text">
@@ -24,7 +25,9 @@
         </div>
         </div>
         <div class="col-md-2">
-          {{-- <a href="{{ route('posts.create') }}" class="btn btn-primary"> --}}
+
+          {{-- <a href="{{ route('tasks.create') }}" class="btn btn-primary"> --}}
+
             新規投稿
           </a>
         </div>
