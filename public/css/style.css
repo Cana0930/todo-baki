@@ -22,6 +22,10 @@ header{
     text-decoration: none;
 }
 
+main{
+  background-color: #FFFBE6;
+}
+
 footer{
     background-color: #FAECED;
     color: #333;
@@ -35,9 +39,10 @@ footer{
   background-color:rgb(62,45,34);
 }
 
-.btn-primary{
+/* .btn-primary{
   background-color: #347928;
-}
+} */
+
 /* 
 .btn-danger{
   background-color: rgb(106,64,33);
@@ -45,11 +50,29 @@ footer{
 } */
 
 /* ↓index.blade.php */
-.card-header{
-  background-color: #C0EBA6;
+.card{
+  border: none;
+  background-color: #FFFBE6;
 }
 .card-body{
-  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+}
+.card-header{
+  border: none;
+  font-size: 30px;
+}
+.card-body{
+  border: 1px solid #347928;
+  border-radius: 20px;
+  margin-top: 15px;
+  background-color: white;
+}
+.detail{
+  text-decoration: underline;
+}
+.detail:hover{
+  color: #347928;
 }
 .col-md-2{
   width: 100%;
@@ -57,7 +80,24 @@ footer{
   justify-content: center;
 }
 #shinkibtn{
-  width: 300px;
+  width: 100%;
   margin-top: 15px;
-  margin-bottom: 15px;
+  background-color: white;
+  border: #347928 2px solid;
+  color: black;
+}
+#shinkibtn:hover{
+  background-color: #C0EBA6;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+}
+#editbtn{
+  border: none;
+  margin-right: 20px;
+  background-color: #347928d6;
+}
+#editbtn:hover{
+  background-color: #347928;
 }
