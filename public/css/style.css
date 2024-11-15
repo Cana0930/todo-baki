@@ -9,6 +9,7 @@ header{
     align-items: center;
     background-color: #FAECED;
     padding: 14px 40px;
+   
 }
 
 .logo{
@@ -61,6 +62,7 @@ footer{
 .card-header{
   border: none;
   font-size: 30px;
+  background-color:#C0EBA6;
 }
 .card-body{
   border: 1px solid #347928;
@@ -100,4 +102,53 @@ footer{
 }
 #editbtn:hover{
   background-color: #347928;
+}
+
+
+
+/* From Uiverse.io by PriyanshuGupta28 */ 
+.input[type="checkbox"] {
+  display: none;
+}
+
+
+  /* Style for the custom checkbox */
+.custom-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+  /* Style for the custom checkmark */
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+  /* Show the checkmark when checkbox is checked */
+.input[type="checkbox"]:checked + .custom-checkbox::after {
+  opacity: 1;
+}
+
+.ichiran{
+display: flex;
+
+align-items:center
+}
+ 
+.dekita{
+margin-right: 5px
+
 }
