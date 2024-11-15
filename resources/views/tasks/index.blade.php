@@ -15,38 +15,45 @@
                   </a>
                 </div>                
                 @foreach($tasks as $task)
+                <div class="ichiran">
+                  <div class=dekita>
+                <label>
+                  <input type="checkbox" class="input">
+                  <span class="custom-checkbox"></span>
+                </label>
+                </div>
                 <div class="card-body">
                   <div class="card-left">
                     <div class="color"></div>
                   </div>
-                    <!-- タイトルをクリックすると内容をトグルする -->
-                  <div class="card-center">
-                    <div class="card-unhide">
-                    <h5 class="card-title" style="cursor: pointer;">タイトル : {{ $task->title }}</h5>
-                    <p class="card-finish_date">締切日：{{ $task->finish_date }}</p>
-                    <p class="detail">▽詳細</p>
-                    </div>
-                    <!-- トグル対象の内容部分 -->
-                    <div class="toggle-content">
-                        <p class="card-text">内容 : {{ $task->contents }}</p>
-                        <img src="{{ asset($task->image_at) }}" alt="" class="card-img">
-                        {{-- <p class="card-text">投稿者：{{ 'tanakatanaka' }}</p> --}}
-                        <p class="card-finish_date">投稿日時 : {{ $task->created_at }}</p>
-                        <div class="btn">
-                        <a href="{{ route("tasks.edit", ['id' => $task->id]) }}" class="btn btn-primary" id="editbtn">
-                          編集
-                        </a>
-                        <form action='{{ route('tasks.destroy', ['id' => $task->id]) }}' method='POST'>
-                          @csrf
-                          @method('delete')
-                            <input type='submit' value='削除' class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
-                        </form>
-                        </div>
-                    </div>
-                  </div>
-
+                    <!-- タイトル -->
+                    <div class="card-center">
+                      <div class="card-unhide">
+                        <h5 class="card-title" style="cursor: pointer;">タイトル : {{ $task->title }}</h5>
+                        <p class="card-finish_date">締切日：{{ $task->finish_date }}</p>
+                        <p class="detail" style="cursor: pointer;">▽詳細</p> <!-- クリック対象を▽詳細に変更 -->
+                      </div>
+                      <!-- トグル対象の内容部分 -->
+              <div class="toggle-content">
+                <p class="card-text">内容 : {{ $task->contents }}</p>
+                <img src="{{ asset($task->image_at) }}" alt="" class="card-img">
+                <p class="card-finish_date">投稿日時 : {{ $task->created_at }}</p>
+                <div class="btn">
+                  <a href="{{ route('tasks.edit', ['id' => $task->id]) }}" class="btn btn-primary" id="editbtn">
+                    編集
+                  </a>
+                  <form action='{{ route('tasks.destroy', ['id' => $task->id]) }}' method='POST'>
+                    @csrf
+                    @method('delete')
+                    <input type='submit' value='削除' class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
+                  </form>
                 </div>
-                @endforeach
+              </div>
+            </div>
+
+          </div>
+        </div>
+        @endforeach
             </div>
         </div>
 
@@ -60,25 +67,25 @@
       // 初期状態で内容を非表示にする
       $(".toggle-content").hide();
 
-      // タイトルがクリックされたときの動作
-      $(".card-unhide").click(function(e) {
-          // クリックされたタイトルに対応する内容をトグル
-          let content = $(this).next(".toggle-content");
+     // ▽詳細がクリックされたときの動作
+    $(".detail").click(function(e) {
+      // クリックされた詳細に対応する内容をトグル
+      let content = $(this).closest(".card-unhide").next(".toggle-content");
 
-          // 他の内容は閉じる
-          $(".toggle-content").not(content).slideUp();
+      // 他の内容は閉じる
+      $(".toggle-content").not(content).slideUp();
 
-          // クリックしたタイトルの内容をトグル
-          content.stop(true, true).slideToggle();
+      // クリックした詳細の内容をトグル
+      content.stop(true, true).slideToggle();
 
-          // 他のクリックイベントが伝播しないようにする
-          e.stopPropagation();
-      });
+      // 他のクリックイベントが伝播しないようにする
+      e.stopPropagation();
+    });
 
-      // タイトル以外のどこかをクリックしたときにすべての内容を閉じる
-      $(document).click(function() {
-          $(".toggle-content").slideUp();
-      });
+    // タイトル以外のどこかをクリックしたときにすべての内容を閉じる
+    $(document).click(function() {
+      $(".toggle-content").slideUp();
+    });
   });
 </script>
 @endsection
