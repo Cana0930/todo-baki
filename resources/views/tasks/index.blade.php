@@ -1,6 +1,8 @@
 @extends("layouts.app")
 @section("content")
 
+<link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+
   <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,28 +10,48 @@
                 <div class="card-header">
                     投稿一覧
                 </div>
+
+                <div class="col-md-2">
+                  <a href="{{ route("tasks.create") }}" class="btn btn-primary" id="shinkibtn">
+                    + 新規投稿
+                  </a>
+                </div>
+                
+                
                 @foreach($tasks as $task)
                 <div class="card-body">
+                  <div class="card-left">
+                    <div class="color"></div>
+                  </div>
                     <!-- タイトルをクリックすると内容をトグルする -->
+                  <div class="card-center">
+                    <div class="card-unhide">
                     <h5 class="card-title" style="cursor: pointer;">タイトル : {{ $task->title }}</h5>
+                    <p class="card-finish_date">締切日：{{ $task->finish_date }}</p>
+                    <p>▽詳細</p>
+                    </div>
                     <!-- トグル対象の内容部分 -->
                     <div class="toggle-content">
-                        <p class="card-text">内容 : {{ $task->body }}</p>
-                        <p class="card-text">投稿者：{{ $task->user->name }}</p>
-                        <a href="{{ route("posts.show", $task->id) }}" class="btn btn-primary">詳細へ</a>
+                        <p class="card-text">内容 : {{ $task->contents }}</p>
+                        <img src="{{ $task->image_at }}" alt="" class="card-img">
+                        {{-- <p class="card-text">投稿者：{{ 'tanakatanaka' }}</p> --}}
+                        <p class="card-finish_date">投稿日時 : {{ $task->created_at }}</p>
+                        <a href="{{ route("tasks.edit", ['id' => $task->id]) }}" class="btn btn-primary" id="editbtn">
+                          編集
+                        </a>
+                        <form action='{{ route('tasks.destroy', ['id' => $task->id]) }}' method='POST'>
+                          @csrf
+                          @method('delete')
+                            <input type='submit' value='削除' class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
+                        </form>
                     </div>
-                </div>
-                <div class="card-footer text-muted">
-                    投稿日時 : {{ $task->created_at }}
+                  </div>
+
                 </div>
                 @endforeach
             </div>
         </div>
-        <div class="col-md-2">
-            <a href="{{ route("tasks.create") }}" class="btn btn-primary">
-              新規投稿
-            </a>
-        </div>
+
     </div>
   </div>
 
@@ -41,7 +63,7 @@
       $(".toggle-content").hide();
 
       // タイトルがクリックされたときの動作
-      $(".card-title").click(function(e) {
+      $(".card-unhide").click(function(e) {
           // クリックされたタイトルに対応する内容をトグル
           let content = $(this).next(".toggle-content");
 
