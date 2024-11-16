@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('contents');
-            $table->text('image_at');
+            $table->text('image_at')->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->date('finish_date');
             $table->foreignId('color_id')->constrained('colors');

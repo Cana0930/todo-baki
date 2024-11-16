@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\ColorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,4 +35,6 @@ Route::get('/tasks/{id}/edit', [TaskController::class, 'edit'])->name('tasks.edi
 Route::put('/tasks/{id}', [TaskController::class, 'update'])->name('tasks.update');
 
 Route::delete('/tasks/{id}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+
+Route::post('/colors', [ColorController::class, 'store'])->name('colors.store');
 

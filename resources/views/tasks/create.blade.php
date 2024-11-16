@@ -22,6 +22,15 @@
                    <label for="photo">Choose a photo!</label>
                    <input type="file" id="photo" name="photo" class="form-control">
                </div>
+               <div class="form-group">
+                   <label for="color">色選んで:</label>
+                   <select name="color_id" id="color" required>
+                    @foreach($colors as $color)
+                     <option value="{{ $color->id }}">{{ $color->color_name }}</option>
+                    @endforeach
+                   </select>
+
+               </div>
                <button type="submit" class="btn btn-primary">作成</button>
            </form>
        </div>
