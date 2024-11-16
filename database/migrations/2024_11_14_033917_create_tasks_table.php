@@ -22,6 +22,11 @@ return new class extends Migration
             $table->boolean('confirmed');
             $table->timestamps();
         });
+// tasks テーブルに color_id カラムがあるか確認
+Schema::table('tasks', function (Blueprint $table) {
+    $table->foreignId('color_id')->constrained('colors');
+});
+
     }
 
     /**
