@@ -10,6 +10,9 @@
   <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
   <!-- Scripts -->
   @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+  {{-- FontAwesome --}}
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
 </head>
 <body>
   <div id="app">
