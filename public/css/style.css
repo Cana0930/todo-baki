@@ -3,17 +3,24 @@
     padding: 0;
 }
 
-header{
+body{
+  background-color:red
+  
+}
+
+
+nav{
+ 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FAECED;
+    background-color:#347928;
     padding: 14px 40px;
-   
 }
 
+
 .logo{
-    height: 36px;
+    height: 40px;
 }
 
 .nav > li > a {
@@ -23,22 +30,19 @@ header{
     text-decoration: none;
 }
 
-main{
-  background-color: #FFFBE6;
-}
 
 footer{
-    background-color: #FAECED;
+    background-color: #FCCD2A;
     color: #333;
     text-align: center;
     font-size: 20px;
-    margin-top: 100px;
+    margin-top: 10px;
     padding: 20px 0;
 }
 
-.nav-color{
+/* .nav-color{
   background-color:rgb(62,45,34);
-}
+} */
 
 /* .btn-primary{
   background-color: #347928;
@@ -144,11 +148,9 @@ footer{
 
 .ichiran{
 display: flex;
-
 align-items:center
 }
- 
+
 .dekita{
 margin-right: 5px
-
 }
