@@ -18,17 +18,27 @@
 <header>
     <div class="bg-light border-bottom mb-3">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container-fluid">
-            <!-- ロゴ -->
-            <a class="navbar-brand" href="#">
-              <img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
-            </a>
-              <h3>バッキバキ</h3>
-            <!-- ハンバーガーメニュー -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
+            <div class="container-fluid">
+                <!-- ロゴ -->
+                {{-- <a class="navbar-brand" href="#">
+                  <img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
+                </a> --}}
+
+
+                <a class="navbar-brand" href="/">
+                    <img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
+                </a>
+              
+                <!-- タイトル -->
+                <div class="apptitle">
+                  <h3>バッキバキ</h3>
+                </div>
+              
+                <!-- ハンバーガーメニュー -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
             <!-- メニュー項目 -->
             <div class="collapse navbar-collapse" id="navbarContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -43,9 +53,11 @@
                 @else
                   <!-- 認証済みユーザー用ドロップダウン -->
                   <li class="nav-item dropdown">
+                    <a href="{{ "/" }}">マイページ</a>
                     <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      {{ Auth::user()->name }}
-                    </a>
+                        {{ Auth::user()->name }}
+                      </a>
+
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
                       <li>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
