@@ -29,7 +29,6 @@
                      <option value="{{ $color->id }}">{{ $color->color_name }}</option>
                     @endforeach
                    </select>
-
                </div>
                <button type="submit" class="btn btn-primary">作成</button>
            </form>
