@@ -32,29 +32,31 @@ class TaskController extends Controller
             'contents' => 'nullable|string',
             'finish_date' => 'nullable|date',
             'color_id' => 'required|exists:colors,id', // color_idがcolorsテーブルに存在することを確認
-            'photo' => 'nullable|image|max:10240',
+            'image_at' => 'nullable|image|max:10240',
         ]);
     
         // 新しいタスクを作成
         $task = new Task;
         $task->title = $request->title;
         $task->contents = $request->contents ?? 'Default content';
-        $task->image_at = $request->photo ?? 'default_image.jpg';
+        // $task->image_at = $request->image_at ?? 'default_image.jpg';
         $task->finish_date = $request->finish_date;
         $task->color_id = $request->color_id;
         $task->user_id = Auth::id();
     
         // 写真がアップロードされた場合
-        if ($request->hasFile('photo')) {
-            $path = $request->file('photo')->store('photos', 'public');
-            $task->photo = $path;
+        if ($request->hasFile('image_at')) {
+            $path = $request->file('image_at')->store('image_at', 'public');
+            $task->image_at = $path;
+        } else {
+            $task->image_at = 'img/noimage.png';
         }
     
         // タスクを保存
         $task->save();
     
         // タスク作成後、リダイレクト
-        return redirect()->route('tasks.index')->with('success', 'タスクが作成されました');
+        return redirect()->route('tasks.index');
     }
     
 
@@ -97,4 +99,5 @@ class TaskController extends Controller
         $task -> delete();
         return redirect()->route('tasks.index');
     }
+
 }

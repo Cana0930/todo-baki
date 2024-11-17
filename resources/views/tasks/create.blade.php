@@ -19,8 +19,8 @@
                     <input type="date" id="finish_date" name="finish_date" class="form-control">
                  </div>
                <div class="form-group">
-                   <label for="photo">Choose a photo!</label>
-                   <input type="file" id="photo" name="photo" class="form-control">
+                   <label for="image_at">Choose a photo!</label>
+                   <input type="file" id="photo" name="image_at" class="form-control">
                </div>
                <div class="form-group">
                    <label for="color">色選んで:</label>
