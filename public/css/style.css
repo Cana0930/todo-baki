@@ -59,26 +59,40 @@ footer{
   border: none;
   background-color: #FFFBE6;
 }
-.card-body{
-  display: flex;
-  justify-content: center;
-}
 .card-header{
   border: none;
   font-size: 30px;
   background-color:#C0EBA6;
 }
 .card-body{
+  /* width: 370px; 反応しねえ！*/
+  display: flex;
+  justify-content: center;
   border: 1px solid #347928;
   border-radius: 20px;
   margin-top: 15px;
   background-color: white;
+}
+.card-left{
+  display: flex;
 }
 .detail{
   text-decoration: underline;
 }
 .detail:hover{
   color: #347928;
+}
+.toggle-content{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.img{
+  width: 120px;
+  height: 120px;
+  border: 1px solid black;
+  justify-content: left;
+  margin-right: 20px;
 }
 .col-md-2{
   width: 100%;
@@ -98,6 +112,7 @@ footer{
 .btn{
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 #editbtn{
   border: none;

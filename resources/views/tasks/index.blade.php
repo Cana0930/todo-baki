@@ -52,9 +52,17 @@
 
                       <!-- トグル対象の内容部分 -->
               <div class="toggle-content">
+                <div class="card-left">
+                  @if($task->image_at === 'img/noimage.png')
+                   <img src="{{ asset($task->image_at) }}" alt="No Image" class="img">
+                  @else
+                   <img src="{{ asset('storage/' . $task->image_at) }}" alt="Task Image" class="img">
+                  @endif
+                </div>
+                <div class="card-right">
                 <p class="card-text">内容 : {{ $task->contents }}</p>
-                <img src="{{ asset($task->image_at) }}" alt="" class="card-img">
                 <p class="card-finish_date">投稿日時 : {{ $task->created_at }}</p>
+                </div>
                 <div class="btn">
                   <a href="{{ route('tasks.edit', ['id' => $task->id]) }}" class="btn btn-primary" id="editbtn">
                     編集
@@ -62,7 +70,7 @@
                   <form action='{{ route('tasks.destroy', ['id' => $task->id]) }}' method='POST'>
                     @csrf
                     @method('delete')
-                    <input type='submit' value='削除' class="btn btn-danger" onclick='return confirm("本当に削除しますか？");'>
+                    <input type='submit' value='削除' class="btn btn-danger" onclick='return confirm("本当に削除しますか？");' id="deletebtn">
                   </form>
                 </div>
               </div>
