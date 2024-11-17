@@ -23,13 +23,9 @@ nav{
     height: 40px;
 }
 
-.nav > li > a {
-    color: #333;
-    font-size: 20px;
-    margin-left: 20px;
-    text-decoration: none;
+h3{
+justify-content: center;
 }
-
 
 footer{
     background-color: #FCCD2A;
@@ -55,6 +51,11 @@ footer{
 } */
 
 /* ↓index.blade.php */
+.fas{
+  font-size: 40px;
+}
+
+
 .card{
   border: none;
   background-color: #FFFBE6;
@@ -168,4 +169,32 @@ align-items:center
 
 .dekita{
 margin-right: 5px
+}
+
+/* home.blade.php */
+.photo{
+  width: 200px;
+}
+
+.plof
+{
+  margin:0 20px;
+  flex-direction: column;
+}
+.plofile{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apptitle {
+  margin: 0 auto;
+  text-align: center;
+  color: #FCCD2A;
 }

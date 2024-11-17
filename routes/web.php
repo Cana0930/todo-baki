@@ -14,8 +14,19 @@ use App\Http\Controllers\ColorController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// ルート設定
 Route::get('/', function () {
-    return view('welcome');
+    if (auth()->check()) {
+        // ログインしている場合
+        return redirect()->route('home'); // ここはログイン後に遷移したいページに変更
+    } else {
+        // ログインしていない場合
+        return view('welcome'); // ログイン前のトップページ
+    }
 });
 
 Auth::routes();
