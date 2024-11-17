@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('contents');
+            $table->string('contents')->nullable();
             $table->text('image_at')->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->date('finish_date');

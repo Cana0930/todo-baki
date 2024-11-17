@@ -12,7 +12,7 @@
                </div>
                <div class="form-group">
                    <label>内容</label>
-                   <textarea class="form-control" placeholder="内容" rows="5" name="body"></textarea>
+                   <textarea class="form-control" placeholder="内容" rows="5" name="contents"></textarea>
                </div>
                <div class="form-group">
                     <label for="finish_date">デッドライン:</label>
