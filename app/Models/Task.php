@@ -9,6 +9,10 @@ class Task extends Model
 {
     use HasFactory;
 
+    protected $attributes = [
+        'confirmed' => true,
+    ];
+
     // Task モデルと Color モデルのリレーション定義
     public function color()
     {

@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Color extends Model
-{
+// class Color extends Model
+// {
     
-    protected $fillable = ['color_name', 'color_code'];
-}
+//     protected $fillable = ['color_name', 'color_code'];
+// }
 
 return new class extends Migration
 {
