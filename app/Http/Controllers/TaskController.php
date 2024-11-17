@@ -58,39 +58,38 @@ class TaskController extends Controller
         // タスク作成後、リダイレクト
         return redirect()->route('tasks.index');
     }
-    
-
-    // function store(Request $request)
-    // {
-    //     // dd($request);
-    //     $task = new Task;
-    //     $task -> title = $request -> title;
-    //     $task -> contents = $request -> contents;
-    //     $task -> finish_date = $request -> finish_date;
-    //     $task -> color_id = $request -> color_id;
-    //     $task -> user_id = Auth::id();
-
-    //     $task -> save();
-
-    //     return redirect()->route('tasks.index');
-    // }
 
     function edit($id)
     {
         $task = Task::find($id);
+        $colors = Color::all();
 
-        return view('tasks.edit', ['task'=>$task]);
+        return view('tasks.edit', ['task'=>$task, 'colors'=>$colors]);
     }
 
     function update(Request $request, $id)
     {
         $task = Task::find($id);
 
-        $task -> title = $request -> title;
-        $task -> contents = $request -> contents;
+        $task -> title = $request -> input('title');
+        $task -> contents = $request -> input('contents');
+        $task -> finish_date = $request -> input('finish_date');
+        $task -> color_id = $request -> input('color_id');
+
+        //ファイルのアップロード処理
+        if($request -> hasFile('image_at')){
+            if($task->image_at){
+                Storage::delete($task->image_at);
+            }
+
+            $path = $request -> file('image_at')->store('images', 'public');
+            $task->image_at = $path;
+        }
         $task -> save();
 
-        return view('tasks.index', ['task'=>$task]);
+        $tasks = Task::all();
+
+        return view('tasks.index', ['tasks' => $tasks]);
     }
 
     function destroy($id)
