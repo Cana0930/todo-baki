@@ -16,30 +16,23 @@
                 </div>                
                 @foreach($tasks as $task)
                 <div class="ichiran">
+                  {{--  id="task-{{ $task->id }}" --}}
                   <div class=dekita>
                 <label>
-                  <input type="checkbox" class="input">
+                  {{-- <form action="{{ route('tasks.destroy', ['id'=>$task->id]) }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <input type="checkbox" class="input" 
+                           onclick="fadeOutAndSubmit(this, 'task-{{ $task->id }}')"> --}}
+                  <form action="{{ route('tasks.destroy', ['id'=>$task->id]) }}" method="POST">
+                  @csrf
+                  @method('delete')
+                  <input type="checkbox" class="input" onclick='if (confirm("本当に削除しますか？")) this.form.submit();'>
+                  </form>
                   <span class="custom-checkbox"></span>
                 </label>
                 </div>
                 <div class="card-body">
-                  <div class="card-left">
-                    <div class="color"></div>
-                  </div>
-                    <!-- タイトル -->
-                  {{-- <div class="card-center">
-                    <div class="card-unhide">
-                      <!-- 色を反映 -->
-                      {{-- <i class="fas fa-frog" style="color: {{ $task->color->color_code }};"></i>     --}}
-                      {{-- <h5 class="card-title">タイトル : {{ $task->title }}</h5>
-                      <p class="card-finish_date">締切日：{{ $task->finish_date }}</p>
-                      <p class="detail" style="cursor: pointer;">▽詳細</p> <!-- クリック対象を▽詳細に変更 -->
-                    </div>
-                  </div> --}}
-
-
-
-
                     <div class="card-center">
                       <div class="card-unhide">
                          
@@ -52,14 +45,14 @@
 
                       <!-- トグル対象の内容部分 -->
               <div class="toggle-content">
-                <div class="card-left">
+                <div class="task-image">
                   @if($task->image_at === 'img/noimage.png')
                    <img src="{{ asset($task->image_at) }}" alt="No Image" class="img">
                   @else
                    <img src="{{ asset('storage/' . $task->image_at) }}" alt="Task Image" class="img">
                   @endif
                 </div>
-                <div class="card-right">
+                <div class="task-detail">
                 <p class="card-text">内容 : {{ $task->contents }}</p>
                 <p class="card-finish_date">投稿日時 : {{ $task->created_at }}</p>
                 </div>
@@ -112,6 +105,7 @@
       $(".toggle-content").slideUp();
     });
   });
+
 </script>
 @endsection
 
