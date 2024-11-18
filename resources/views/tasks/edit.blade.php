@@ -14,8 +14,8 @@
                     <label>内容</label>
                     <textarea class="form-control" rows="5" name="contents">{{ $task->contents }}</textarea>
                 </div>
-                <div class="form-group">
-                    <label for="finish_date">デッドライン:</label>
+                <div class="form-group dedline">
+                    <label for="finish_date">いつまでに:</label>
                     <input type="date" id="finish_date" name="finish_date" class="form-control" value="{{ old('finish_date', $task->finish_date) }}">
                 </div>
                 <div class="form-group">
@@ -30,7 +30,9 @@
                     @endforeach
                    </select>
                </div>
-                <button type="submit" class="btn btn-primary">更新する</button>
+             <div class="button-container">
+                <button id="editbtn" type="submit" class="btn btn-primary">更新する</button>
+             </div>
             </form>
         </div>
     </div>
