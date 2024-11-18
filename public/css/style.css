@@ -4,7 +4,7 @@
 }
 
 body{
-  background-color:red
+  background-color:#FFFBE6;
   
 }
 
@@ -81,8 +81,12 @@ footer{
   font-size: 30px;
   background-color:#C0EBA6;
 }
+
+.col-md-8{
+width: 380px;
+
+}
 .card-body{
-  /* width: 370px; 反応しねえ！*/
   display: flex;
   justify-content: center;
   border: 1px solid #347928;
