@@ -5,6 +5,7 @@
 
   <div class="container mt-5">
     <div class="row justify-content-center">
+
         <div class="col-md-8">
              <div class="card text-center">
                 <div class="card-header">ToDoリスト</div>
@@ -65,16 +66,14 @@
                     @method('delete')
                     <input type='submit' value='削除' class="btn btn-danger" onclick='return confirm("本当に削除しますか？");' id="deletebtn">
                   </form>
+
                 </div>
               </div>
             </div>
-
           </div>
-        </div>
         @endforeach
-            </div>
         </div>
-
+      </div>
     </div>
   </div>
 

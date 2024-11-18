@@ -23,8 +23,6 @@
                 {{-- <a class="navbar-brand" href="#">
                   <img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
                 </a> --}}
-
-
                 <a class="navbar-brand" href="/">
                     <img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
                 </a>
@@ -52,23 +50,28 @@
                   </li>
                 @else
                   <!-- 認証済みユーザー用ドロップダウン -->
-                  <li class="nav-item dropdown">
-                    <a href="{{ "/" }}">マイページ</a>
+                  {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
-                      </a>
-
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
-                      <li>
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">ログアウト</a>
-                      </li>
+                    </a>
+                
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu"> --}}
+                        <!-- ホームに戻るリンク -->
+                        <li>
+                            <a class="dropdown-item" href="{{ url('home') }}">マイページ</a>
+                        </li>
+                        <!-- ログアウトリンク -->
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">ログアウト</a>
+                        </li>
                     </ul>
+                
                     <!-- ログアウトフォーム -->
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                      @csrf
+                        @csrf
                     </form>
-                  </li>
+                </li>
                 @endguest
               </ul>
             </div>

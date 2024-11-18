@@ -4,7 +4,7 @@
 }
 
 body{
-  background-color:red
+  background-color:#FFFBE6;
   
 }
 
@@ -25,6 +25,23 @@ nav{
 
 h3{
 justify-content: center;
+}
+
+
+.nav-link{
+  margin-right: 50px;
+}
+
+.dropdown-item{
+  margin-right: 30px;
+  
+}
+
+@media screen and(min-width:991px){
+  .dropdown-item{
+   font-size: 400px; 
+  
+}
 }
 
 footer{
@@ -55,7 +72,6 @@ footer{
   font-size: 40px;
 }
 
-
 .card{
   border: none;
   background-color: #FFFBE6;
@@ -65,8 +81,12 @@ footer{
   font-size: 30px;
   background-color:#C0EBA6;
 }
+
+.col-md-8{
+width: 380px;
+
+}
 .card-body{
-  /* width: 370px; 反応しねえ！*/
   display: flex;
   justify-content: center;
   border: 1px solid #347928;
@@ -76,6 +96,7 @@ footer{
 }
 .card-left{
   display: flex;
+  padding: 5px;
 }
 .detail{
   text-decoration: underline;
@@ -175,15 +196,17 @@ margin-right: 5px
   width: 200px;
 }
 
-.plof
-{
+
+.plof{
   margin:0 20px;
   flex-direction: column;
+  height: 100px
 }
 .plofile{
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .container-fluid {
