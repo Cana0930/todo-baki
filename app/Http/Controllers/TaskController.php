@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Color;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class TaskController extends Controller
 {
