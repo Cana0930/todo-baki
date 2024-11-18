@@ -17,7 +17,11 @@
           <div class="ichiran">
             <div class=dekita>
               <label>
-                <input type="checkbox" class="input">
+                <form action="{{ route('tasks.destroy', ['id'=>$task->id]) }}" method="POST">
+                  @csrf
+                  @method('delete')
+                  <input type="checkbox" class="input" onclick='if (confirm("本当に削除しますか？")) this.form.submit();'>
+                </form>
                 <span class="custom-checkbox"></span>
               </label>
             </div>
