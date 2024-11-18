@@ -22,7 +22,7 @@ use App\Http\Controllers\ColorController;
 Route::get('/', function () {
     if (auth()->check()) {
         // ログインしている場合
-        return redirect()->route('home'); // ここはログイン後に遷移したいページに変更
+        return redirect()->route('tasks.index'); // ここはログイン後に遷移したいページに変更
     } else {
         // ログインしていない場合
         return view('welcome'); // ログイン前のトップページ
