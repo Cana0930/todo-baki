@@ -12,11 +12,43 @@ use Illuminate\Support\Facades\Storage;
 
 class TaskController extends Controller
 {
-    function index()
-    {
-        $tasks = Task::where('user_id', Auth::id())->get();
-        return view('tasks.index', compact('tasks'));
+    function index(Request $request)
+{
+    // 現在ログインしているユーザーのタスクを取得
+    $query = Task::where('user_id', Auth::id());
+
+    // ソート条件をリクエストから取得
+    $sort = $request->input('sort');
+
+    // ソート条件に応じた並び替え処理
+    switch ($sort) {
+        case 'created_at_asc':
+            $query->orderBy('created_at', 'asc');
+            break;
+        case 'created_at_desc':
+            $query->orderBy('created_at', 'desc');
+            break;
+        case 'finish_date_asc':
+            $query->orderBy('finish_date', 'asc');
+            break;
+        case 'finish_date_desc':
+            $query->orderBy('finish_date', 'desc');
+            break;
+        case 'color':
+            $query->join('colors', 'tasks.color_id', '=', 'colors.id')
+                  ->orderBy('colors.color_code', 'asc')
+                  ->select('tasks.*');
+            break;
+        default:
+            $query->orderBy('created_at', 'desc'); // デフォルトの並び替え
+            break;
     }
+
+    // 最終的なタスクデータを取得
+    $tasks = $query->get();
+
+    return view('tasks.index', compact('tasks', 'sort'));
+}
 
     function create()
     {
