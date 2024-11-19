@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Color;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,7 +14,7 @@ class TaskController extends Controller
 {
     function index()
     {
-        $tasks = Task::all();
+        $tasks = Task::where('user_id', Auth::id())->get();
         return view('tasks.index', compact('tasks'));
     }
 
@@ -98,6 +99,12 @@ class TaskController extends Controller
         $task = Task::find($id);
         $task -> delete();
         return redirect()->route('tasks.index');
+    }
+
+    function share(Request $request)
+    {
+        $tasks = Task::all();
+        return view('tasks.share');
     }
 
 }
