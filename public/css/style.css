@@ -10,7 +10,6 @@ body{
 
 
 nav{
- 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,6 +24,11 @@ nav{
 
 h3{
 justify-content: center;
+}
+
+#navbarContent{
+  display: flex;
+  text-align:justify;
 }
 
 
@@ -83,7 +87,7 @@ footer{
 }
 
 .col-md-8{
-width: 380px;
+width: 95%;
 /* display: flex; */
 }
 
@@ -97,6 +101,7 @@ width: 380px;
 }
 .card-left{
   display: flex;
+  justify-content: center;
   padding: 5px;
 }
 .detail{
@@ -108,7 +113,8 @@ width: 380px;
 .toggle-content{
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
 }
 .img{
   width: 120px;
@@ -225,7 +231,6 @@ margin-right: 5px
 
 /* create.blade.php */
 
-
 .dedline{
   width: 122px;
 }
@@ -240,10 +245,18 @@ margin-right: 5px
   margin-top: 20px; /* 上に少し余白を追加（任意） */
 }
 
-.
 
-form {
-  display: flex;
-  flex-direction: column; /* 縦方向に配置 */
-  align-items: center;    /* 子要素を中央揃え */
+/* ログイン */
+.login-body{
+
+  width: 90%;
+  text-align: left;
+  
+}
+
+  .login-body{
+    margin-left: 20px;
+    width: 90%;
+    text-align: left;
+    
 }

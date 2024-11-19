@@ -43,10 +43,10 @@
                 @guest
                   <!-- ゲスト用リンク -->
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+                    <a class="nav-link dropdown-item" href="{{ route('login') }}">ログイン</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">登録</a>
+                    <a class="nav-link dropdown-item" href="{{ route('register') }}">登録</a>
                   </li>
                 @else
                   <!-- 認証済みユーザー用ドロップダウン -->
