@@ -15,9 +15,10 @@
           @endphp
 
           <div class="user-tasks mb-4">
-            <h4 class="user-name">{{ $user->name }} さんのタスク</h4>
-            
+            <h4 class="user-name">▽ {{ $user->name }} さんのタスク ▽</h4>
+            <div class="toggle">
             @foreach($tasks as $task)
+            
               <div class="ichiran">
                 <div class="card-body">
                   <div class="card-center">
@@ -45,7 +46,8 @@
                 </div>
               </div>
             @endforeach
-          </div>
+           </div>
+         </div>
         @endforeach
       </div>
     </div>
@@ -68,6 +70,27 @@
       $(document).click(function() {
         $(".toggle-content").slideUp();
       });
+
+
+      //田中を隠すやつ
+      // 初期設定: 全てのタスクを非表示
+    $(".toggle").hide();
+
+    // ユーザー名をクリックしたら、そのユーザーのタスクを全て表示/非表示
+    $(".user-name").click(function(e) {
+      let userTasks = $(this).next(".toggle"); // ユーザーに対応するタスク
+      $(".toggle").not(userTasks).slideUp();  // 他のタスクを非表示
+      userTasks.stop(true, true).slideToggle(); // 対応するタスクをトグル表示
+      e.stopPropagation();
+    });
+    
+    $(document).click(function() {
+      $(".toggle").slideUp();
+    });
+    
+    $(".user-name").click(function(e) {
+      e.stopPropagation();
+    });
   });
 </script>
 @endsection
