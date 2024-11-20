@@ -104,7 +104,8 @@ class TaskController extends Controller
     function share(Request $request)
     {
         $tasks = Task::all();
-        return view('tasks.share');
+        return view('tasks.share', compact('tasks'));
     }
+
 
 }
