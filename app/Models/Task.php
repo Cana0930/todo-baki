@@ -18,4 +18,10 @@ class Task extends Model
     {
         return $this->belongsTo(Color::class);
     }
+
+      // ユーザーとのリレーション
+      public function user()
+      {
+          return $this->belongsTo(User::class);
+      }
 }
