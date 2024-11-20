@@ -48,12 +48,6 @@
                 </div>
                       <!-- トグル対象の内容部分 -->
                 <div class="toggle-content">
-                  <div id="modal" class="modal" style="display: none;">
-                    <div class="modal-content">
-                      <span class="close">&times;</span> <!-- モーダルを閉じるボタン -->
-                      <img id="modal-img" src="" alt="拡大画像" style="width: 100%;">
-                    </div>
-                  </div>
                   <div class="card-left">
                     @if($task->image_at === 'img/noimage.png')
                     <img src="{{ asset($task->image_at) }}" alt="No Image" class="img">
@@ -88,72 +82,7 @@
 <!-- jQuery スクリプト -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  $(document).ready(function () {
-    // 初期状態でモーダルを非表示に設定
-    $("#modal").hide();
-    $(".toggle-content").hide();
-
-    // 画像クリックでモーダルを表示
-    $(".img").click(function (e) {
-        let src = $(this).attr("src");
-        $("#modal-img").attr("src", src);
-        $("#modal").fadeIn();
-        e.stopPropagation(); // 他のクリックイベントを防止
-    });
-
-    // モーダル外をクリックでモーダルを閉じる
-    $(document).click(function (e) {
-        if (!$(e.target).closest(".modal-content").length) {
-            // モーダルを閉じる
-            $("#modal").fadeOut();
-
-            // モーダルが閉じる際に詳細を閉じる
-            $(".toggle-content").slideUp();
-        }
-    });
-
-    // モーダル内の閉じるボタン
-    $(".close").click(function () {
-        // モーダルを閉じる
-        $("#modal").fadeOut();
-
-        // モーダルが閉じる際に詳細を閉じる
-        $(".toggle-content").slideUp();
-    });
-
-    // ▽詳細クリックでトグル
-    $(".detail").click(function (e) {
-        let content = $(this).closest(".card-unhide").next(".toggle-content");
-
-        // モーダルが開いている場合は詳細を閉じない
-        if ($("#modal").is(":visible")) {
-            e.stopPropagation();
-            return;
-        }
-
-        // 他の内容を閉じる
-        $(".toggle-content").not(content).slideUp();
-
-        // クリックした詳細の内容をトグル
-        content.stop(true, true).slideToggle();
-
-        // 他のクリックイベントが伝播しないようにする
-        e.stopPropagation();
-    });
-
-    // モーダルが閉じている場合に画面をクリックすると詳細を閉じる
-    $(document).click(function () {
-        if (!$("#modal").is(":visible")) {
-            $(".toggle-content").slideUp();
-        }
-    });
-});
-</script>
-@endsection
-
-
-
-$(document).ready(function() {
+  $(document).ready(function() {
   // 初期状態で内容を非表示にする
   $(".toggle-content").hide();
 
@@ -177,3 +106,9 @@ $(document).click(function() {
   $(".toggle-content").slideUp();
 });
 });
+  
+</script>
+@endsection
+
+
+
