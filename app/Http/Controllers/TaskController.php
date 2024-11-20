@@ -135,9 +135,14 @@ class TaskController extends Controller
 
     function share(Request $request)
     {
-        $tasks = Task::all();
-        return view('tasks.share', compact('tasks'));
+        $tasks = Task::with('user', 'color')->get();
+    
+        // ユーザーごとにタスクをグループ化
+        $groupedTasks = $tasks->groupBy('user_id');
+    
+        return view('tasks.share', compact('groupedTasks'));
     }
+    
 
 
 }
