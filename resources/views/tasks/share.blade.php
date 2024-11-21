@@ -7,7 +7,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card text-center">
-        <div class="card-header">みんなのToDoリスト</div>
+        <div class="card-header">Share ToDo</div>
 
         @foreach($groupedTasks as $userId => $tasks)
           @php

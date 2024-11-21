@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card text-center">
-          <div class="card-header">ToDoリスト</div>
+          <div class="card-header">My ToDo</div>
           <div class="col-md-2">
               <a href="{{ route("tasks.create") }}" class="btn btn-primary" id="shinkibtn">
                 + 新規作成
