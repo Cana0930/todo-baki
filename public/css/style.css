@@ -43,7 +43,7 @@ h3{
 .dropdown-item{
   margin-right: 15px;
   text-align: center;
-  color: #C0EBA6;
+  color: #333;
   
   background-color: #347928;
 
@@ -55,7 +55,8 @@ h3{
 
 @media screen and (max-width:991px){
   .dropdown-item{
-  border: solid #C0EBA6;
+  border: solid #333;
+  background-color: #C0EBA6;
 }
 }
 
