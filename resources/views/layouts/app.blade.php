@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>藤堂刃物</title>
+  <title>ToDo BAKI</title>
   <!-- Fonts -->
  
   <!-- Scripts -->
@@ -19,17 +19,14 @@
     <div class="bg-light border-bottom mb-3">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <!-- ロゴ -->
-                {{-- <a class="navbar-brand" href="#">
-                  <img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
-                </a> --}}
+               
                 <a class="navbar-brand" href="/">
                     <img class="logo" src="{{ asset('img/logo.png') }}" alt="Logo">
                 </a>
               
                 <!-- タイトル -->
                 <div class="apptitle">
-                  <h3>バッキバキ</h3>
+                  <h3>ToDo BAKI</h3>
                 </div>
               
                 <!-- ハンバーガーメニュー -->
@@ -58,17 +55,17 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu"> --}}
                         <!-- ホームに戻るリンク -->
                         <li>
-                            <a class="dropdown-item" href="{{ url('home') }}">マイページ</a>
+                            <a class="dropdown-item" href="{{ url('home') }}">マイ<br>ページ</a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="{{ route('tasks.index') }}">MY TODO</a>
+                          <a class="dropdown-item" href="{{ route('tasks.index') }}">MY<br>ToDo</a>
                       </li>
                         <li>
-                          <a class="dropdown-item" href="{{ route('tasks.share') }}">air do</a>
+                          <a class="dropdown-item" href="{{ route('tasks.share') }}">Share<br>ToDo</a>
                         </li>
                         <li><!-- ログアウトリンク -->
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">ログアウト</a>
+                            <a class="dropdown-item migihaji" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">ログ<br>アウト</a>
                         </li>
                     </ul>
                 
@@ -76,7 +73,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                </li>
+                {{-- </li> --}}
                 @endguest
               </ul>
             </div>
@@ -86,7 +83,7 @@
 </header>
      @yield('content')
 <footer>
-    Copyright &copy; 藤堂刃物 Inc.
+    Copyright &copy; Baki Inc.
   </footer>
 </body>
 </html>

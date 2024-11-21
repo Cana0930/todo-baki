@@ -1,11 +1,19 @@
 *{
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 body{
   background-color:#FFFBE6;
   
+}
+
+.navbar-collapse{
+
+/* background-color: #FFFBE6; */
+display: flex;
+justify-content: right;
 }
 
 
@@ -18,12 +26,14 @@ nav{
 }
 
 
+
 .logo{
   height: 40px;
 }
 
 h3{
-justify-content: center;
+ font-size: 30px;
+ 
 }
 
 .nav-link{
@@ -31,14 +41,21 @@ justify-content: center;
 }
 
 .dropdown-item{
-  margin-right: 30px;
+  margin-right: 15px;
+  text-align: center;
+  color: #C0EBA6;
   
+  background-color: #347928;
+
+
+}
+.migihaji{
+  margin-right: 20px;
 }
 
-@media screen and(min-width:991px){
+@media screen and (max-width:991px){
   .dropdown-item{
-   font-size: 400px; 
-  
+  border: solid #C0EBA6;
 }
 }
 
@@ -49,6 +66,7 @@ footer{
   font-size: 20px;
   margin-top: 10px;
   padding: 20px 0;
+  
 }
 
 /* .nav-color{
@@ -78,6 +96,7 @@ footer{
   border: none;
   font-size: 30px;
   background-color:#C0EBA6;
+ 
 }
 
 .col-md-8{
@@ -91,7 +110,8 @@ width: 95%;
   border: 1px solid #347928;
   border-radius: 20px;
   margin-top: 15px;
-  background-color: white;
+  background-color: #C0EBA6;
+ 
 }
 .card-left{
   display: flex;
@@ -218,14 +238,14 @@ margin-right: 5px
 
 .container-fluid {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
 
 .apptitle {
   margin: 0 auto;
-  text-align: center;
   color: #FCCD2A;
+
 }
 
 /* create.blade.php */
@@ -256,6 +276,42 @@ margin-right: 5px
   .login-body{
     margin-left: 20px;
     width: 90%;
-    text-align: left;
-    
+    text-align: left;   
+}
+
+/* welcomepage */
+.welcomepage{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+
+.toptitle{
+ height: 80px;
+font-size:50px;
+
+}
+
+.welcome-logo{
+height: 100%;
+
+}
+
+.logo-class{
+  height:200px;
+  
+}
+
+/* シェアーのページ */
+.user-name{
+  color: #347928;
+}
+.user-name:hover{
+  color:#C0EBA6;
+  cursor: pointer;
+}
+
+.user-tasks{
+  margin-top: 15px;
 }
