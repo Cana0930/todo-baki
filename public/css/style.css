@@ -33,7 +33,6 @@ nav{
 
 h3{
  font-size: 30px;
- 
 }
 
 .nav-link{
@@ -44,11 +43,9 @@ h3{
   margin-right: 15px;
   text-align: center;
   color: #333;
-  
   background-color: #347928;
-
-
 }
+
 .migihaji{
   margin-right: 20px;
 }
@@ -56,7 +53,15 @@ h3{
 @media screen and (max-width:991px){
   .dropdown-item{
   border: solid #333;
+ 
+
   background-color: #C0EBA6;
+}
+.navbar-collapse{ 
+  display: inline-block;
+}
+.dropdown-item:hover{
+  background-color: #FFFBE6;
 }
 }
 
@@ -114,9 +119,8 @@ padding-bottom: 120px;
   justify-content: center;
   border: 1px solid #347928;
   border-radius: 20px;
-  margin-top: 15px;
-  background-color: #C0EBA6;
- 
+  margin-top: 10px;
+  background-color:white;
 }
 .card-left{
   display: flex;
@@ -293,7 +297,7 @@ margin-right: 5px
 
 .toptitle{
  height: 80px;
-font-size:50px;
+ font-size:50px;
 }
 
 .welcome-logo{
@@ -316,4 +320,11 @@ height: 100%;
 
 .user-tasks{
   margin-top: 15px;
+}
+
+.sort-form {
+  display: flex; /* 子要素の配置調整に使用 */
+  justify-content: center; /* 水平方向の中央揃え */
+  align-items: center; /* 垂直方向の中央揃え（必要に応じて） */
+  margin: 10px 0; /* /上下の余白を設定 */
 }
