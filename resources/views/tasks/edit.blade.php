@@ -19,11 +19,11 @@
                     <input type="date" id="finish_date" name="finish_date" class="form-control" value="{{ old('finish_date', $task->finish_date) }}">
                 </div>
                 <div class="form-group">
-                    <label for="image_at">Choose a photo!</label>
+                    <label for="image_at">写真選択</label>
                     <input type="file" id="image_at" name="image_at" class="form-control">
                 </div>                
                   <div class="form-group">
-                   <label for="color">色選んで:</label>
+                   <label for="color">色🐸？</label>
                    <select name="color_id" id="color" required>
                     @foreach($colors as $color)
                      <option value="{{ $color->id }}"{{ $task->color_id == $color->id ? 'selected' : '' }}>{{ $color->color_name }}</option>

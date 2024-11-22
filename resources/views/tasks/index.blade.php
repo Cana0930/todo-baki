@@ -42,7 +42,7 @@
               </div> --}}
               <div class="card-center">
                 <div class="card-unhide">
-                  <h5 class="card-title"><i class="fas fa-frog" style="color: {{ $task->color->color_code }};"></i>......{{ $task->title }}</h5>
+                  <h5 class="card-title"><i class="fas fa-frog" style="color: {{ $task->color->color_code }};"></i>　{{ $task->title }}</h5>
                   <p class="card-finish_date">締切日：{{ $task->finish_date }}</p>
                   <p class="detail" style="cursor: pointer;">▽詳細</p> <!-- クリック対象を▽詳細に変更 -->
                 </div>

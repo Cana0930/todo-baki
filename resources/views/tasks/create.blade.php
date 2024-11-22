@@ -14,15 +14,15 @@
                     <textarea class="form-control" placeholder="内容" rows="5" name="contents"></textarea>
                 </div>
                 <div class="form-group dedline">
-                    <label for="finish_date">いつまでに:</label>
+                    <label for="finish_date">いつまでに</label>
                     <input type="date" id="finish_date" name="finish_date" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="image_at">Choose a photo!</label>
+                    <label for="image_at">写真選択</label>
                     <input type="file" id="photo" name="image_at" class="form-control">
                 </div>
                 <div class="form-group">
-                        <label for="color">色変える？:</label>
+                        <label for="color">色🐸？</label>
                     <select name="color_id" id="color" required>
                         @foreach($colors as $color)
                         <option value="{{ $color->id }}">{{ $color->color_name }}</option>
